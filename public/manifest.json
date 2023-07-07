@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Extension",
+  "description": "ChatGPT Extension",
+  "version": "1.0",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "ai.png",
+    "default_title": "ChatGPT Extension"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },  
+  "permissions": [
+    "tabs",
+    "scripting"
+  ],
+
+  "host_permissions" : [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
